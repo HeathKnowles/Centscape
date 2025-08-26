@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "title": { "type": "string" },
+    "image": { "type": ["string", "null"] },
+    "price": { "type": ["string", "null"] },
+    "currency": { "type": ["string", "null"] },
+    "siteName": { "type": "string" },
+    "sourceUrl": { "type": "string" },
+    "normalizedUrl": { "type": "string" },
+    "createdAt": { "type": "number" }
+  },
+  "required": ["title", "siteName", "sourceUrl", "normalizedUrl", "createdAt"]
+}

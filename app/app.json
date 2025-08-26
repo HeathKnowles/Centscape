@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "Centscape Wishlist",
+    "slug": "centscape-wishlist",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/image.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#6ee7b7"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.centscape.wishlist"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#6ee7b7"
+      },
+      "usesCleartextTraffic": true,
+      "permissions": [
+        "INTERNET",
+        "ACCESS_NETWORK_STATE"
+      ],
+      "package": "com.centscape.wishlist"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "scheme": "centscape",
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
+    ]
+  }
+}

@@ -1,50 +1,55 @@
-# Welcome to your Expo app 👋
+# Centscape
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Setup & Run Instructions
 
-## Get started
-
-1. Install dependencies
-
-   ```bash
+### App (React Native / Expo)
+1. **Install dependencies:**
+   ```powershell
+   cd app
    npm install
    ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
+2. **Start the app:**
+   ```powershell
+   npm start
    ```
+   - For Android: `npm run android`
+   - For iOS: `npm run ios`
+   - For Web: `npm run web`
 
-In the output, you'll find options to open the app in a
+### Server (Node.js / Express)
+1. **Install dependencies:**
+   ```powershell
+   cd server
+   npm install
+   ```
+2. **Build and run:**
+   ```powershell
+   npm run build
+   npm start
+   ```
+   - For development: `npm run dev`
+   - For tests: `npm test`
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Engineering Tradeoffs & Risks
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **Rate Limiting:** The API server uses strict rate limiting (10 requests/min/IP) to prevent abuse, which may block legitimate batch requests.
+- **Preview Extraction:** Relies on third-party libraries (`cheerio`, `got`) for HTML parsing and fetching, which may break if upstream APIs change.
+- **Persistence:** The app uses `zustand` with `AsyncStorage` for local state; no cloud sync or multi-device support.
+- **Schema Migration:** Wishlist store includes migration logic, but future schema changes may require manual intervention.
+- **Security:** The server blocks private IPs and enforces protocol checks, but does not sanitize all user input or protect against all attack vectors.
+- **Testing:** Server uses Jest for tests, but coverage may be incomplete for edge cases.
 
-## Get a fresh project
+## AI Usage Disclosure
 
-When you're ready, run:
+This project was assisted by GitHub Copilot and AI-powered code suggestions. Prompts included:
+- "Give me a sample react native app for this"
+- "Implement an Express API for preview extraction with rate limiting and private IP blocking"
 
-```bash
-npm run reset-project
-```
+AI-generated code snippets were used for:
+- React Native component scaffolding
+- Zustand store setup and migration logic
+- Express server setup, middleware, and endpoint structure
+- HTML parsing and preview extraction logic
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Note
+- All AI-generated code was reviewed and adapted for project requirements. No proprietary or sensitive data was used in prompts.
