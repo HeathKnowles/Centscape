@@ -39,17 +39,5 @@
 - **Security:** The server blocks private IPs and enforces protocol checks, but does not sanitize all user input or protect against all attack vectors.
 - **Testing:** Server uses Jest for tests, but coverage may be incomplete for edge cases.
 
-## AI Usage Disclosure
-
-This project was assisted by GitHub Copilot and AI-powered code suggestions. Prompts included:
-- "Give me a sample react native app for this"
-- "Implement an Express API for preview extraction with rate limiting and private IP blocking"
-
-AI-generated code snippets were used for:
-- React Native component scaffolding
-- Zustand store setup and migration logic
-- Express server setup, middleware, and endpoint structure
-- HTML parsing and preview extraction logic
-
 ## Note
 - All AI-generated code was reviewed and adapted for project requirements. No proprietary or sensitive data was used in prompts.
